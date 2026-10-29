@@ -1,0 +1,23 @@
+[project]
+name = "job-rag"
+version = "0.1.0"
+description = "Ask questions about Job Radar postings: hybrid pgvector + full-text search, cited answers by Claude, retrieval eval"
+readme = "README.md"
+authors = [
+    { name = "jmoranj", email = "morandim.joao@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.40",
+    "fastembed>=0.4",
+    "pgvector>=0.3",
+    "psycopg[binary]>=3.2",
+    "pydantic>=2.8",
+]
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
+
+[project.scripts]
+job-rag = "job_rag:main"
